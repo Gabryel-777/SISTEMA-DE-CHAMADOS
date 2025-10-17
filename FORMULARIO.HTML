@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criar Chamado - GMS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+
+  <aside class="sidebar">
+    <h2 class="menu-title">🏠 HOME</h2>
+    <img src="0199f50d-a2c0-475c-9e1e-757c82444366.png" alt="Logo GMS" class="sidebar-logo">
+    <nav>
+      <ul>
+        <li><a href="dashboard.html">Painel</a></li>
+        <li><a href="novo-chamado.html">Criar Chamado</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <section class="form-chamado">
+      <h2>Criar Chamado</h2>
+      <form>
+        <input type="text" placeholder="Tipo" class="form-input">
+        <input type="text" placeholder="Categoria" class="form-input">
+        <input type="text" placeholder="Urgência" class="form-input">
+        <input type="text" placeholder="Título" class="form-input">
+
+        <label for="descricao">Descrição</label>
+        <div class="descricao-toolbar">
+          <button type="button">Simples</button>
+          <button type="button"><b>B</b></button>
+          <button type="button"><i>I</i></button>
+        </div>
+        <textarea id="descricao" rows="8" class="form-input"></textarea>
+
+        <button type="submit" class="btn-login">Enviar Chamado</button>
+      </form>
+    </section>
+  </main>
+
+</body>
+</html>
