@@ -1,45 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Criar Chamado - GMS</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body class="dashboard-body">
 
-  <aside class="sidebar">
-    <h2 class="menu-title">🏠 HOME</h2>
-    <img src="0199f50d-a2c0-475c-9e1e-757c82444366.png" alt="Logo GMS" class="sidebar-logo">
+  <aside class="sidebar" id="sidebar">
+    <button id="toggle-menu" class="toggle-menu">FECHAR MENU</button>
+    <h2 class="menu-title"><a href="dashboard.html" class="home-btn">🏠 HOME</a></h2>
+
     <nav>
       <ul>
-        <li><a href="dashboard.html">Painel</a></li>
-        <li><a href="novo-chamado.html">Criar Chamado</a></li>
+        <li><a class="home-btn" href="dashboard.html">🏠 HOME</a></li>
+        <li><a href="novo-chamado.html">➕ CRIAR UM CHAMADO</a></li>
+        <li><a href="#">👁️ CHAMADOS ABERTOS</a></li>
+        <li><a href="#">🚫 CHAMADOS FECHADOS</a></li>
+        <li><a href="#">❗ CHAMADOS PENDENTES</a></li>
       </ul>
     </nav>
+    <div class="sidebar-logo">
+      <img src="img/gms.png" alt="Logo GMS">
+    </div>
   </aside>
 
   <main class="content">
     <section class="form-chamado">
       <h2>Criar Chamado</h2>
-      <form>
-        <input type="text" placeholder="Tipo" class="form-input">
-        <input type="text" placeholder="Categoria" class="form-input">
-        <input type="text" placeholder="Urgência" class="form-input">
-        <input type="text" placeholder="Título" class="form-input">
+      <form id="form-chamado" onsubmit="return false;">
+        <input type="text" placeholder="Tipo" class="form-input" />
+        <input type="text" placeholder="Categoria" class="form-input" />
+        <input type="text" placeholder="Urgência" class="form-input" />
+        <input type="text" placeholder="Título" class="form-input" />
 
-        <label for="descricao">Descrição</label>
-        <div class="descricao-toolbar">
-          <button type="button">Simples</button>
-          <button type="button"><b>B</b></button>
-          <button type="button"><i>I</i></button>
+        <label class="label-descricao" for="editor">DESCRIÇÃO</label>
+
+        <div class="descricao-toolbar" role="toolbar" aria-label="Formatar texto">
+          <button type="button" id="btn-simples" class="tool-btn">SIMPLES</button>
+          <button type="button" id="btn-bold" class="tool-btn"><b>B</b></button>
+          <button type="button" id="btn-italic" class="tool-btn"><i>I</i></button>
         </div>
-        <textarea id="descricao" rows="8" class="form-input"></textarea>
 
-        <button type="submit" class="btn-login">Enviar Chamado</button>
+        <div id="editor" class="editor" contenteditable="true" aria-label="Editor de descrição">
+          Escreva a descrição aqui...
+        </div>
+
+        <button id="btn-enviar" type="submit" class="btn-login">Enviar Chamado</button>
       </form>
     </section>
   </main>
 
+  <script src="script.js"></script>
 </body>
 </html>
