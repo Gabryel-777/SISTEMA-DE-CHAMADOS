@@ -1,146 +1,121 @@
-/* =========== Global =========== */
-* { box-sizing: border-box; margin: 0; padding: 0; font-family: "Poppins", sans-serif; }
-a { color: inherit; text-decoration: none; }
-button { font-family: inherit; }
-
-/* Background used across pages */
-body { background: url('img/fundo.jpg') no-repeat center center fixed; background-size: cover; }
-
-/* Centered pages (login, cadastro) */
-.centered-page {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
-/* =========== LOGIN =========== */
-.login-container {
-  background: rgba(0,0,0,0.6);
-  border-radius: 20px;
-  padding: 40px 50px;
-  text-align: center;
-  box-shadow: 0 0 15px rgba(255,255,255,0.08);
-  width: 360px;
+/* Fundo estrelado */
+.bg-stars{
+    background:url("img/fundo-estrelado.jpg") no-repeat center fixed;
+    background-size:cover;
+    height:100vh;
 }
 
-.avatar { width: 100px; height: 100px; border-radius: 50%; border: 3px solid white; margin-bottom: 25px; object-fit: cover; }
-
-.input-box { margin: 10px 0; }
-.input-box input { width: 100%; padding: 10px; border: none; border-radius: 10px; outline: none; font-size: 16px; text-align: center; }
-
-.links { display: flex; justify-content: space-between; margin: 10px 0 20px; }
-.links a { color: #87cefa; font-size: 14px; }
-.links a:hover { text-decoration: underline; }
-
-.btn-login { background: #2b2b2b; color: white; border: none; padding: 10px 0; width: 100%; border-radius: 10px; font-size: 16px; letter-spacing: 1px; cursor: pointer; transition: 0.2s; }
-.btn-login:hover { background: #444; }
-
-.logo-gms { width: 140px; margin-top: 20px; }
-
-/* =========== CADASTRO =========== */
-.cadastro-container {
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 20px;
-  padding: 30px 40px;
-  text-align: center;
-  width: 620px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.08);
+/* Caixa de login/cadastro */
+.login-box{
+    width:350px;
+    margin:120px auto;
+    background:#000000b0;
+    padding:25px;
+    color:white;
+    border-radius:12px;
 }
 
-.header { display: flex; justify-content: space-around; align-items: center; margin-bottom: 20px; }
-.avatar-small { width: 80px; height: 80px; border-radius: 50%; border: 3px solid white; object-fit: cover; }
-.logo-center { width: 120px; }
-
-.form-row { display: flex; justify-content: space-between; margin-bottom: 12px; }
-.form-row input { width: 48%; padding: 10px; border-radius: 10px; border: none; outline: none; font-size: 15px; text-align: center; }
-
-/* =========== DASHBOARD / SIDEBAR / FORM CHAMADO =========== */
-.dashboard-body { display: flex; min-height: 100vh; }
-
-.sidebar {
-  background: rgba(211,211,211,0.95);
-  width: 240px;
-  padding: 18px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: width 0.25s ease, transform 0.25s ease;
-  border-right: 4px solid #0e8ef6;
+.login-box input{
+    width:100%;
+    padding:10px;
+    margin:5px 0 15px;
+    border:none;
+    border-radius:5px;
 }
 
-.sidebar.collapsed { width: 70px; }
-
-.toggle-menu {
-  align-self: stretch;
-  margin-bottom: 12px;
-  padding: 8px 10px;
-  border-radius: 8px;
-  border: none;
-  background: #0e8ef6;
-  color: white;
-  cursor: pointer;
-  font-weight: 600;
+/* Botões */
+.btn{
+    width:100%;
+    padding:10px;
+    border:none;
+    border-radius:5px;
+    background:#1e90ff;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
 }
 
-.menu-title { font-size: 18px; margin: 6px 0 14px; }
-.menu-title a { font-size: 18px; font-weight: 700; }
-
-.sidebar nav ul { list-style: none; width: 100%; padding: 0; }
-.sidebar nav ul li { margin-bottom: 14px; width: 100%; text-align: left; padding-left: 12px; }
-.sidebar nav ul li a { color: #222; font-weight: 600; display: block; padding: 8px 6px; border-radius: 6px; }
-.sidebar nav ul li a:hover { background: rgba(0,0,0,0.06); }
-
-.sidebar-logo img { width: 110px; margin-top: auto; margin-bottom: 8px; }
-
-/* Content area */
-.content { flex: 1; display: flex; justify-content: center; align-items: flex-start; padding: 40px; }
-
-/* Chamados list */
-.chamados { width: 100%; max-width: 900px; }
-.chamados-header { display:flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
-.btn-novo { padding: 8px 12px; border-radius: 8px; border: none; background: #0e8ef6; color: white; cursor: pointer; }
-
-/* Status list */
-.status-list { list-style: none; margin-top: 10px; }
-.status-list li { padding: 8px 6px; border-bottom: 1px solid rgba(0,0,0,0.06); display:flex; justify-content: space-between; align-items:center; }
-.dot { width: 12px; height: 12px; border-radius: 50%; display:inline-block; margin-right: 8px; }
-.green { background: #27ae60; } .lightgreen { background: #2ecc71; } .lime { background: #a3e635; } .red { background: #e74c3c; } .check { background: #3498db; } .lock { background: #95a5a6; } .trash { background: #bdc3c7; }
-.count { font-weight: 700; margin-left: 10px; }
-
-/* Form chamado */
-.form-chamado {
-  background: rgba(240,240,240,0.95);
-  padding: 26px;
-  border-radius: 12px;
-  width: 600px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+.btn:hover{
+    opacity:.8;
 }
 
-.form-chamado h2 { text-align: left; margin-bottom: 14px; font-size: 22px; }
-
-.form-input { width: 100%; padding: 10px; margin-bottom: 12px; border-radius: 8px; border: none; outline: none; background: rgba(120,110,110,0.12); }
-
-.label-descricao { display:block; margin-top: 12px; margin-bottom: 8px; font-size: 20px; font-weight: 700; }
-
-.descricao-toolbar { display: flex; gap: 10px; margin-bottom: 10px; }
-.tool-btn { padding: 6px 10px; border-radius: 6px; border: none; cursor: pointer; background: rgba(120,110,110,0.12); font-weight: 700; }
-
-.editor {
-  min-height: 160px;
-  border-radius: 4px;
-  padding: 12px;
-  background: rgba(120,110,110,0.18);
-  overflow-y: auto;
-  margin-bottom: 12px;
-  outline: none;
+.link{
+    margin-top:12px;
+    text-align:center;
 }
 
-/* Responsividade */
-@media (max-width: 900px) {
-  .dashboard-body { flex-direction: column; }
-  .sidebar { width: 100%; display: flex; flex-direction: row; gap: 12px; overflow-x: auto; }
-  .sidebar.collapsed { width: 100%; }
-  .content { padding: 18px; }
-  .form-chamado { width: 100%; }
+.link a{
+    color:#1e90ff;
+    text-decoration:none;
+}
+
+/* MENU LATERAL */
+.menu-btn{
+    padding:15px;
+    font-size:22px;
+    color:white;
+    cursor:pointer;
+    display:block;
+}
+
+.sidebar{
+    position:fixed;
+    top:0;
+    left:-250px;
+    width:250px;
+    height:100%;
+    background:#000000e7;
+    padding-top:60px;
+    transition:.4s;
+}
+
+.sidebar a{
+    display:block;
+    padding:15px;
+    color:white;
+    text-decoration:none;
+    border-bottom:1px solid #333;
+}
+
+.close-btn{
+    padding:15px;
+    font-size:16px;
+    text-align:right;
+    color:white;
+    cursor:pointer;
+}
+
+/* Abrir menu */
+#menu-toggle:checked ~ .sidebar{
+    left:0;
+}
+
+.content{
+    padding:20px;
+    color:white;
+}
+
+/* Editor de texto */
+.editor-buttons button{
+    padding:5px 10px;
+    margin:5px 3px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+textarea{
+    width:100%;
+    height:200px;
+    padding:10px;
+    border-radius:5px;
+    resize:none;
+    outline:none;
 }
